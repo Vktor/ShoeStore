@@ -1,4 +1,4 @@
-package com.example.myshoestore.screens.welcomeScreen
+package com.example.myshoestore.screens.instructions
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -8,17 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.myshoestore.R
-import com.example.myshoestore.databinding.WelcomeScreenFragmentBinding
+import com.example.myshoestore.databinding.InstructionsFragmentBinding
 
-class WelcomeScreenFragment : Fragment() {
+class InstructionsFragment : Fragment() {
 
     companion object {
-        fun newInstance() = WelcomeScreenFragment()
+        fun newInstance() = InstructionsFragment()
     }
 
-    private lateinit var viewModel: WelcomeScreenViewModel
+    private lateinit var viewModel: InstructionsViewModel
 
-    private lateinit var binding: WelcomeScreenFragmentBinding
+    private lateinit var binding: InstructionsFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,13 +26,13 @@ class WelcomeScreenFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(
             inflater,
-            R.layout.welcome_screen_fragment,
+            R.layout.instructions_fragment,
             container,
             false
         )
-        viewModel = ViewModelProvider(this).get(WelcomeScreenViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(InstructionsViewModel::class.java)
 
-        binding.welcomeScreenViewModel = viewModel
+        binding.instructionsViewModel = viewModel
         binding.lifecycleOwner = this
 
         return binding.root
@@ -40,7 +40,6 @@ class WelcomeScreenFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
     }
 
 }
