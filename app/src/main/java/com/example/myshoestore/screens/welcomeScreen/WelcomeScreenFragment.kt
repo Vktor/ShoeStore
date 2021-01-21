@@ -2,10 +2,8 @@ package com.example.myshoestore.screens.welcomeScreen
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.myshoestore.R
 import com.example.myshoestore.databinding.WelcomeScreenFragmentBinding
@@ -36,6 +34,11 @@ class WelcomeScreenFragment : Fragment() {
         binding.lifecycleOwner = this
 
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.navdrawer_menu, menu)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
