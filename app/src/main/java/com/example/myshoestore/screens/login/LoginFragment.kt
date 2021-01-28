@@ -42,14 +42,12 @@ class LoginFragment : Fragment() {
 
 
         //button navigation
-        binding.btnLogin.setOnClickListener {
+        binding.btnLogin.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_welcomeScreenFragment)
-            Timber.i("Hola soy el signIn")
-        }
-        binding.btnSignUp.setOnClickListener {
+            )
+        binding.btnSignUp.setOnClickListener (
             Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_welcomeScreenFragment)
-            Timber.i("Hola soy el signUp")
-        }
+            )
 
 
         return binding.root

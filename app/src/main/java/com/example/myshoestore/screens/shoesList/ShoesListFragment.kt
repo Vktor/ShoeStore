@@ -7,7 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.example.myshoestore.R
+import com.example.myshoestore.ShoeActivityViewModel
 import com.example.myshoestore.databinding.ShoesListFragmentBinding
 
 class ShoesListFragment : Fragment() {
@@ -16,14 +19,14 @@ class ShoesListFragment : Fragment() {
         fun newInstance() = ShoesListFragment()
     }
 
-    private lateinit var viewModel: ShoesListViewModel
+    private lateinit var viewModel: ShoeActivityViewModel
 
     private lateinit var binding: ShoesListFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(
             inflater,
             R.layout.shoes_list_fragment,
@@ -31,10 +34,19 @@ class ShoesListFragment : Fragment() {
             false
         )
 
-        viewModel = ViewModelProvider(this).get(ShoesListViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(ShoeActivityViewModel::class.java)
 
         binding.shoesListViewModel = viewModel
         binding.lifecycleOwner = this
+
+        viewModel.shoeRepository.observe(viewLifecycleOwner, Observer {
+            //observe list changes
+        })
+
+        //Navigation
+        binding.floatingActionButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_shoesListFragment_to_shoesDetailFragment)
+        )
 
         return binding.root
     }

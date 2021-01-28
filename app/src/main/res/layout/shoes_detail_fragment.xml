@@ -5,7 +5,7 @@
     <data>
         <variable
             name="shoesDetailViewModel"
-            type="com.example.myshoestore.screens.shoesDetails.ShoesDetailViewModel" />
+            type="com.example.myshoestore.ShoeActivityViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -103,22 +103,22 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextShoesSize" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
             android:text="Cancel"
-            app:layout_constraintBottom_toBottomOf="@+id/button3"
+            app:layout_constraintBottom_toBottomOf="@+id/btnSave"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/button3" />
+            app:layout_constraintTop_toTopOf="@+id/btnSave" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="80dp"
             android:layout_marginBottom="80dp"
-            android:text="Saven"
+            android:text="Save"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

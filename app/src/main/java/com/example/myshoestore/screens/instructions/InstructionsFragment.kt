@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.example.myshoestore.R
 import com.example.myshoestore.databinding.InstructionsFragmentBinding
 
@@ -34,6 +35,12 @@ class InstructionsFragment : Fragment() {
 
         binding.instructionsViewModel = viewModel
         binding.lifecycleOwner = this
+
+
+        //Navigation
+        binding.button.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_instructionsFragment_to_shoesListFragment)
+        )
 
         return binding.root
     }

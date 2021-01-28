@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import com.example.myshoestore.R
 import com.example.myshoestore.databinding.WelcomeScreenFragmentBinding
 
@@ -32,6 +34,11 @@ class WelcomeScreenFragment : Fragment() {
 
         binding.welcomeScreenViewModel = viewModel
         binding.lifecycleOwner = this
+
+        //Navigation
+        binding.btnNext.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_welcomeScreenFragment_to_instructionsFragment)
+        )
 
         return binding.root
     }

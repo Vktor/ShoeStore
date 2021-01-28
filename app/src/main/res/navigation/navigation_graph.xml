@@ -38,5 +38,9 @@
     <fragment
         android:id="@+id/shoesDetailFragment"
         android:name="com.example.myshoestore.screens.shoesDetails.ShoesDetailFragment"
-        android:label="ShoesDetailFragment" />
+        android:label="ShoesDetailFragment" >
+        <action
+            android:id="@+id/action_shoesDetailFragment_to_shoesListFragment"
+            app:destination="@id/shoesListFragment" />
+    </fragment>
 </navigation>
